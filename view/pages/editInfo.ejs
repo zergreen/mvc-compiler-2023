@@ -1,0 +1,95 @@
+<%-include('../partials/header.ejs')%>
+    <!DOCTYPE html>
+    <html lang="" en>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+        </script>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .F1 {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .font16 {
+            font-size: 16px;
+        }
+
+        .font30 {
+            font-size: 30px;
+        }
+
+        .padding-bt {
+            padding-bottom: 1.5%;
+        }
+
+        .padding-ls {
+            padding-inline-start: 4.0%;
+        }
+
+        .padding-le {
+            padding-inline-end: 4.0%;
+        }
+
+        .padding-t {
+            padding-top: 1.5%;
+        }
+    </style>
+
+    <body>
+        <div class="text-center F1 font30 padding-bt padding-t bold">MVC Test of Computer Science KMITL</div>
+        <div class="text-center F1 font16 padding-bt padding-t bold">System for show information all of employee</div>
+        <div class="container-fluid padding-bt ">
+            <div class="row">
+                <div class="col-xxl-3"></div>
+                <div class="col-9 col-lg-18 ">
+                    <h4>Edit Personal Info</h4>
+                    <ul>
+                        <% response.forEach((response) => { %>
+                        <form class="form-horizontal" class="d-flex" action="/editUser/<%= response.employee_id %>" method="POST">
+                            <div class="from-group">
+                                <label class="col-lg-3 control-label">name:</label>
+                                <div class="col-lg-8">
+                                <input name="name" class="form-control me-2" type="text" value="<%= response.name %>"></div>
+                            </div>
+                            <div class="from-group">
+                                <label class="col-lg-3 control-label">Phone Number:</label>
+                                <div class="col-lg-8">
+                                <input name="Tell" class="form-control me-2" type="text" value="<%= response.Tell %>"></div>
+                            </div>
+                            <div class="from-group">
+                                <label class="col-lg-3 control-label">Address:</label>
+                                <div class="col-lg-8">
+                                <input name="Address" class="form-control me-2" type="text" value="<%= response.Address %>"></div>
+                            </div>
+                            <div class="from-group">
+                                <label class="col-lg-3 control-label">Salary:</label>
+                                <div class="col-lg-8">
+                                <input name="salary" class="form-control me-2" type="text" value="<%= response.salary %>"></div>
+                            </div>
+                            <div class="from-group">
+                                <label class="col-lg-3 control-label">Department:</label>
+                                <div class="col-lg-8">
+                                <input name="dept_name" class="form-control me-2" type="text" value="<%= response.dept_name %>"></div>
+                            </div>
+                            <div class="from-group">
+                                <label class="col-lg-3 control-label">Status:</label>
+                                <div class="col-lg-8">
+                                <input name="head_id" class="form-control me-2" type="text" value="<%= response.head_id %>"></div>
+                            </div>
+                                <div class="padding-t ">
+                                <button class="btn btn-success" type="submit">Submit</button>
+                                <button class="btn btn-danger" type="cancel" href="http:/localhost:3000/showInformation">cancel</button>
+                            </div>    
+                        </form>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
