@@ -5,7 +5,6 @@ class Operator {
     connection.query(sql, function (err, data) {
       if (err) {
         console.log(err);
-        console.log("ERROR: at getAllDataOperator");
         return res.status(501).send({ response: "Not Implement" });
       } else {
         console.log(data);
@@ -15,8 +14,6 @@ class Operator {
   };
 
   addDataOperator = (compiler, res) => {
-    console.log(5555);
-    console.table(compiler);
     let sql = `INSERT INTO Compiler
         (
             id,
