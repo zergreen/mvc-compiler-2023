@@ -8,10 +8,18 @@ router.post("/addEmployee", new Endpoint().addEmployeeEndpoint);
 router.get("/findHead", new Endpoint().findHeadEnpoint);
 router.get("/showInformation", new Endpoint().showInfoEndpoint);
 router.get("/deleteInfo/:id", new Endpoint().deleteInfoEndpoint);
-router.get("/report", new Endpoint().reportEndpoint);
+// router.get("/report", new Endpoint().reportEndpoint);
 router.post("/editUser/:id", new Endpoint().editUserEndpoint);
 router.get("/getEditUser/:edit_id", new Endpoint().getEditUserEndpoint);
 //router.post("/uploadFile", new Endpoint().uploadFileEndpoint);
+
+//new mvc
+router.post("/addData", new Endpoint().addDataEndpoint);
+router.get("/getAlldata", new Endpoint().getAllDataEndpoint);
+router.get("/deleteData/:id", new Endpoint().deleteDataEndpoint);
+router.get("/report", new Endpoint().reportEndpoint);
+router.put("/editData", new Endpoint().editDataEndpoint);
+
 
 router.get('/', (req, res) => {
     return res.render('../view/pages/home.ejs')

@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
         </script>
-
     <style>
         .bold {
             font-weight: bold;
@@ -69,65 +68,53 @@
             width: 100%;
             border: 1px solid #ccc;
         }
-
-        .styled-textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            resize: none; /* Disable textarea resizing */
-        }
     </style>
 
     <body>
-        <div class="text-center F1 font30 padding-bt padding-t bold">Quiz1: Compiler</div>
-        <div class="text-center F1 font16 padding-bt padding-t bold">---</div>
+        <div class="text-center F1 font30 padding-bt padding-t bold">MVC Test of Computer Science KMITL</div>
+        <div class="text-center F1 font16 padding-bt padding-t bold">System for show information all of employee</div>
         <div class="container-fluid padding-bt ">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-3 col-xl-3 col-xxl-3"></div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
-                    <form action="/addData" method="POST" class="d-flex" role="search">
-                        <!-- <input name="employee_id" class="form-control me-2" type="text" placeholder="Type your code here"> -->
+                    <form action="/addEmployee" method="POST" class="d-flex" role="search">
+                        <input name="employee_id" class="form-control me-2" type="text" placeholder="Typing your id">
                 </div>
-
                 <!-- <button class="btn btn-warning" type="submit">Search</button> -->
-                
-                <div class="text-center padding-t ">
-                    <select name="model_type">
-                        <option value="Model1" selected>Model1</option>
-                        <option value="Model2">Model2</option>
-                    </select>
-                </div>
-
-                <div class="container mt-5">
-                    <label for="myTextarea">Enter code here:</label>
-                    <textarea id="myTextarea" class="styled-textarea" name="src_code" rows="4" placeholder="Your text here..." value="" required></textarea>
-                </div>
-                
                 <div>
                     <div class="text-center padding-t ">
-                        <button class="btn btn-success" type="submit">COMPILE</button>
+                        <button class="btn btn-success" type="submit">Add Employee By random data</button>
                         <!-- <button class="btn btn-danger" type="cancel">cancel</button> -->
                     </div>
                     </form>
                 </div>
-
             </div>
+        </div>
+        <div class="text-center  ">
+            <button class="btn btn-warning">
+                <a href="http://localhost:3000/showInformation">
+                    SHOW INFORMATION
+                </a>
+            </button>
         </div>
 
         <div class="text-center padding-t ">
             <button class="btn btn-warning">
-                <a href="/report">
+                <a href="http://localhost:3000/report">
                     show report
                 </a>
             </button>
         </div>
 
-
-
-      
-
-       
+        <div class="container">
+            <h1>File Upload</h1>
+            <form id="form">
+                <div class="input-group">
+                    <label for="file"> Select files </label>
+                    <input id="file" type="file" multiple>
+                </div>
+                <button class="btn btn-success" type='submit'>Upload</button>
+            </form>
+        </div>
 
     </body>
