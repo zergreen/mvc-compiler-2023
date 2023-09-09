@@ -7,7 +7,6 @@ class Operator {
         console.log(err);
         return res.status(501).send({ response: "Not Implement" });
       } else {
-        console.log(data);
         return res.status(200).send({ response: data });
       }
     });
