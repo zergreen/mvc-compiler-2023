@@ -25,12 +25,12 @@ class Endpoint {
     new Logic().reportLogic(res);
   };
 
-  editDataEndpoint = (req, res) => {
-    this.compiler.id = req.body.id;
-    this.compiler.src_code = req.body.src_code;
-    this.compiler.output_syntax = req.body.output_syntax;
-    new Logic().editDataEndpointLogic(this.compiler, res);
-  };
+//   editDataEndpoint = (req, res) => {
+//     this.compiler.id = req.body.id;
+//     this.compiler.src_code = req.body.src_code;
+//     this.compiler.output_syntax = req.body.output_syntax;
+//     new Logic().editDataEndpointLogic(this.compiler, res);
+//   };
 }
 
 module.exports = {

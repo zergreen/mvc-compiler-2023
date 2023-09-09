@@ -75,23 +75,23 @@ class Operator {
     });
   };
 
-  editDataOperator = (compiler, res) => {
-    let sql = `UPDATE Compiler
-        SET src_code = ?, output_syntax = ?
-        WHERE id = ?;`;
-    connection.query(
-      sql,
-      [compiler.src_code, compiler.output_syntax, compiler.id],
-      function (err) {
-        if (err) {
-          console.log(err);
-          return res.status(501).send({ response: "Not Implement" });
-        } else {
-          return res.status(201).send({ response: "Update finished" });
-        }
-      }
-    );
-  };
+//   editDataOperator = (compiler, res) => {
+//     let sql = `UPDATE Compiler
+//         SET src_code = ?, output_syntax = ?
+//         WHERE id = ?;`;
+//     connection.query(
+//       sql,
+//       [compiler.src_code, compiler.output_syntax, compiler.id],
+//       function (err) {
+//         if (err) {
+//           console.log(err);
+//           return res.status(501).send({ response: "Not Implement" });
+//         } else {
+//           return res.status(201).send({ response: "Update finished" });
+//         }
+//       }
+//     );
+//   };
 }
 
 module.exports = {

@@ -72,16 +72,16 @@ class Logic {
     new Operator().getDataOperator(res);
   };
 
-  editDataEndpointLogic = async (compiler, res) => {
-    const model1Tokens = await this.compile(
-      compiler.src_code,
-      compiler.model_type
-    );
-    model1Tokens.forEach((token) => {
-      compiler.output_syntax += `${token.value} is ${token.type}` + "\n";
-    });
-    new Operator().editDataOperator(compiler, res);
-  };
+  // editDataEndpointLogic = async (compiler, res) => {
+  //   const model1Tokens = await this.compile(
+  //     compiler.src_code,
+  //     compiler.model_type
+  //   );
+  //   model1Tokens.forEach((token) => {
+  //     compiler.output_syntax += `${token.value} is ${token.type}` + "\n";
+  //   });
+  //   new Operator().editDataOperator(compiler, res);
+  // };
 }
 
 module.exports = {

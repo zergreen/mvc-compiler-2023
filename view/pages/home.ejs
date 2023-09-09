@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 
     <style>
         .bold {
@@ -78,20 +76,24 @@
             border-radius: 4px;
             resize: none; /* Disable textarea resizing */
         }
+
+        #custom {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #000;
+            padding: 10px;
+        }
     </style>
 
     <body>
         <div class="text-center F1 font30 padding-bt padding-t bold">Quiz1: Compiler</div>
-        <div class="text-center F1 font16 padding-bt padding-t bold">---</div>
+        
         <div class="container-fluid padding-bt ">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-2 col-lg-3 col-xl-3 col-xxl-3"></div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
                     <form action="/addData" method="POST" class="d-flex" role="search">
-                        <!-- <input name="employee_id" class="form-control me-2" type="text" placeholder="Type your code here"> -->
                 </div>
-
-                <!-- <button class="btn btn-warning" type="submit">Search</button> -->
                 
                 <div class="text-center padding-t ">
                     <select name="model_type">
@@ -108,11 +110,9 @@
                 <div>
                     <div class="text-center padding-t ">
                         <button class="btn btn-success" type="submit">COMPILE</button>
-                        <!-- <button class="btn btn-danger" type="cancel">cancel</button> -->
                     </div>
                     </form>
                 </div>
-
             </div>
         </div>
 
@@ -124,10 +124,43 @@
             </button>
         </div>
 
-
-
-      
-
-       
+        <div class="F1 font16 padding-bt padding-t ">
+            <center><h6>Example is below...</h6></center>
+            <div class="container" id="custom">
+                <p> <b>Input:</b> <br>declare abc <br>
+                    declare def <br>
+                    abc = 1 <br>
+                    def = abc + abc <br></p>
+                <p> <b>Output (Model1):</b> <br> declare is Keyword <br>
+                    abc is Identifier <br>
+                    declare is Keyword <br>
+                    def is Identifier <br>
+                    abc is Identifier <br>
+                    = is Symbol <br>
+                    1 is Literal <br>
+                    def is Identifier <br>
+                    = is Symbol <br>
+                    abc is Identifier <br>
+                    + is Symbol <br>
+                    abc is Identifier <br></p>
+                <p>
+                    <b>Output (Model2):</b> <br>
+                    declare is Keyword and Sign <br>
+                    abc is Variable <br>
+                    declare is Keyword and Sign <br>
+                    def is Variable <br>
+                    abc is Variable <br>
+                    = is Assignment <br>
+                    1 is Integer <br>
+                    def is Variable <br>
+                    = is Assignment <br>
+                    abc is Variable <br>
+                    + is Keyword and Sign <br>
+                    abc is Variable <br>
+                </p>
+            </div>
+        </div>
 
     </body>
+
+<%-include('../partials/footer.ejs')%>
